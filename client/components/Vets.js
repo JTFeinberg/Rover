@@ -8,8 +8,13 @@ class Vets extends Component {
     this.props.loadAllVets()
   }
   render() {
-    console.log(this.props.allVets)
-    return <div>{this.props.allVets}</div>
+    return this.props.allVets.map(vet => (
+      <div key={vet.id}>
+        <img src={vet.imgUrl} alt={vet.name} />
+        <p>Name: {vet.name}</p>
+        <p>Location: {vet.location}</p>
+      </div>
+    ))
   }
 }
 
