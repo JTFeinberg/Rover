@@ -2,8 +2,18 @@ body {
   font-family: sans-serif;
 }
 
-a {
+a,
+a:visited {
   text-decoration: none;
+  color: #000000;
+}
+
+a:hover {
+  color: grey;
+}
+
+a:active {
+  text-decoration: underline;
 }
 
 label {

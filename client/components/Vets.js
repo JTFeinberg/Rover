@@ -10,7 +10,7 @@ class Vets extends Component {
   render() {
     return this.props.allVets.map(vet => (
       <Link key={vet.id} to={`/vets/${vet.id}`}>
-        <div>
+        <div className="vet-card">
           <img src={vet.imgUrl} alt={vet.name} />
           <p>Name: {vet.name}</p>
           <p>Location: {vet.location}</p>
