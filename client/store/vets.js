@@ -18,6 +18,10 @@ const getVets = vets => ({type: GET_VETS, payload: vets})
 /**
  * THUNK CREATORS
  */
+export const fetchVetsThunk = () => async dispatch => {
+  const res = await axios(`/api/vets`)
+  return dispatch(getVets(res.data))
+}
 
 /**
  * REDUCER
