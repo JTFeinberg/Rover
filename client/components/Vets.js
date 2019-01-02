@@ -4,8 +4,12 @@ import {connect} from 'react-redux'
 import {fetchVetsThunk} from '../store'
 
 class Vets extends Component {
+  componentDidMount() {
+    this.props.loadAllVets()
+  }
   render() {
-    return <div>{this.props.vets}</div>
+    console.log(this.props.allVets)
+    return <div>{this.props.allVets}</div>
   }
 }
 
