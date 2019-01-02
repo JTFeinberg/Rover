@@ -1,5 +1,17 @@
 import React from 'react'
+import {connect} from 'react-redux'
 
-const SingleVet = props => <div>{props.match.params.vetId}</div>
+const SingleVet = props => {
+  const currVet = props.allVets.filter(
+    vet => vet.id === props.match.params.vetId
+  )[0]
+  console.log(props.allVets)
+  return <div>{props.match.params.vetId}</div>
+}
 
-export default SingleVet
+const mapStateToProps = state => {
+  return {
+    allVets: state.vets
+  }
+}
+export default connect(mapStateToProps)(SingleVet)
