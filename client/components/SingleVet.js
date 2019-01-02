@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {fetchVetsThunk} from '../store'
 
 const SingleVet = props => {
   const currVet = props.allVets.filter(
@@ -14,4 +15,10 @@ const mapStateToProps = state => {
     allVets: state.vets
   }
 }
-export default connect(mapStateToProps)(SingleVet)
+
+const mapDispatchToProps = dispatch => {
+  return {
+    loadAllVets: () => dispatch(fetchVetsThunk())
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(SingleVet)
