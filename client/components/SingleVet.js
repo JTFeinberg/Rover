@@ -2,12 +2,13 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {fetchVetsThunk} from '../store'
 
-const SingleVet = props => {
-  const currVet = props.allVets.filter(
-    vet => vet.id === props.match.params.vetId
-  )[0]
-  console.log(props.allVets)
-  return <div>{props.match.params.vetId}</div>
+class SingleVet extends Component {
+  render() {
+    const currVet = this.props.allVets.filter(
+      vet => vet.id === this.props.match.params.vetId
+    )[0]
+    return <div>{this.props.match.params.vetId}</div>
+  }
 }
 
 const mapStateToProps = state => {
