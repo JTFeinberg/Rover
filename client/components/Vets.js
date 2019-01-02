@@ -8,15 +8,19 @@ class Vets extends Component {
     this.props.loadAllVets()
   }
   render() {
-    return this.props.allVets.map(vet => (
-      <Link key={vet.id} to={`/vets/${vet.id}`}>
-        <div className="vet-card">
-          <img src={vet.imgUrl} alt={vet.name} />
-          <p>Name: {vet.name}</p>
-          <p>Location: {vet.location}</p>
-        </div>
-      </Link>
-    ))
+    return (
+      <div className="vets-container">
+        {this.props.allVets.map(vet => (
+          <div key={vet.id} className="vet-card">
+            <Link to={`/vets/${vet.id}`}>
+              <img src={vet.imgUrl} alt={vet.name} />
+              <p>Name: {vet.name}</p>
+              <p>Location: {vet.location}</p>
+            </Link>
+          </div>
+        ))}
+      </div>
+    )
   }
 }
 
