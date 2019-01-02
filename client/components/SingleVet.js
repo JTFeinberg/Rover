@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {fetchVetsThunk} from '../store'
 
@@ -10,7 +10,7 @@ class SingleVet extends Component {
     const currVet = this.props.allVets.filter(
       vet => vet.id === this.props.match.params.vetId
     )[0]
-    return <div>{this.props.match.params.vetId}</div>
+    return <div>{currVet.name}</div>
   }
 }
 
