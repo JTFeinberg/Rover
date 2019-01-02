@@ -10,7 +10,7 @@ class SingleVet extends Component {
     const currVet = this.props.allVets.filter(
       vet => vet.id === this.props.match.params.vetId
     )[0]
-    return <div>{currVet.name}</div>
+    return currVet && <div>{currVet.name}</div>
   }
 }
 
