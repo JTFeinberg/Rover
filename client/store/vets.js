@@ -26,3 +26,11 @@ export const fetchVetsThunk = () => async dispatch => {
 /**
  * REDUCER
  */
+export default function(state = defaultVets, action) {
+  switch (action.type) {
+    case GET_VETS:
+      return action.payload
+    default:
+      return state
+  }
+}
