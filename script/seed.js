@@ -136,6 +136,7 @@ async function seed() {
   ])
 
   console.log(`seeded ${users.length} users`)
+  console.log(`seeded ${vets.length} vets`)
   console.log(`seeded successfully`)
 }
 
