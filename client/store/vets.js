@@ -13,6 +13,7 @@ const defaultVets = []
 /**
  * ACTION CREATORS
  */
+const getVets = vets => ({type: GET_VETS, payload: vets})
 
 /**
  * THUNK CREATORS
